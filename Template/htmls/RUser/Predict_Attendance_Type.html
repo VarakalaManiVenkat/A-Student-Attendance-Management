@@ -1,0 +1,177 @@
+{% extends 'RUser/design.html' %}
+{% block userblock %}
+
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+
+
+		<style>
+			body {background-color:#000000;}
+			.container-fluid {padding:50px;}
+			.container{background-color:white;padding:50px;   }
+			#title{font-family: 'Fredoka One', cursive;
+}
+			.text-uppercase{
+			font-family: 'Righteous', cursive;
+
+			}
+			.tweettext{
+
+    border: 2px solid yellowgreen;
+    width: 904px;
+    height: 202px;
+    overflow: scroll;
+    background-color:;
+}
+		.style1 {
+	color: #FF0000;
+	font-weight: bold;
+}
+.style4 {color: #FFFF00; font-weight: bold; }
+.style6 {
+	font-size: 24px;
+	color: #FFFF00;
+	font-weight: bold;
+}
+        </style>
+
+	<body>
+	<div class="container-fluid">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-5">
+
+                   <form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+							<p class="text-uppercase pull-center style1">PREDICTION OF ATTENDANCE TYPE !!! </p>
+                            <hr>
+
+                                {% csrf_token %}
+                                <table width="568" align="center">
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center" class="style4">Enter Registered Attendence Number </div></td>
+                                    <td><input type="text" name="RNo"></td>
+                                  </tr>
+                                  <tr>
+                                    <td width="287" height="44" bgcolor="#FF0000"><div align="center" class="style4">
+                                      <div align="center">Enter Attendance Day </div>
+                                    </div></td>
+                                    <td width="269"><input type="text" name="ADay"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center" class="style4">
+                                      <div align="center">Select Week Day  </div>
+                                    </div></td>
+                                    <td><select name="Weekday">
+                                      <option>---Select Week Day ---</option>
+                                      <option>Monday</option>
+                                      <option>Tuesday</option>
+                                      <option>Wednesday</option>
+                                      <option>Thursday</option>
+                                      <option>Friday</option>
+                                    </select>                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center" class="style4"><span class="style2">Select Student Location </span></div></td>
+                                    <td><select name="Student_Location">
+                                      <option>---Select Student Location ---</option>
+                                      <option>CONROE ISD</option>
+                                      <option>CYPRESS-FAIRBANKS ISD</option>
+                                      <option>FLOYDADA ISD</option>
+                                      <option>SNOOK ISD</option>
+                                      <option>SOCORRO ISD</option>
+                                      <option>KLEIN ISD</option>
+                                      <option>GARLAND ISD</option>
+                                      <option>DALLAS ISD</option>
+                                      <option>FORT WORTH ISD</option>
+                                      <option>KATY ISD</option>
+                                                                        </select></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center" class="style4">Select Locaiton Number </div></td>
+                                    <td><select name="Location_Number">
+                                      <option>---Select Location Number ---</option>
+                                      <option>170902</option>
+                                      <option>101907</option>
+                                      <option>77901</option>
+                                      <option>101917</option>
+                                      <option>26903</option>
+                                      <option>71909</option>
+                                      <option>101915</option>
+                                      <option>57909</option>
+                                      <option>57905</option>
+                                      <option>220905</option>
+                                      <option>101914</option>
+                                                                        </select></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center" class="style4">Select Country </div></td>
+                                    <td><select name="Country">
+                                      <option>---Select Country ---</option>
+                                      <option>Montgomery</option>
+                                      <option>Harris</option>
+                                      <option>Floyd</option>
+                                      <option>Burleson</option>
+                                      <option>El Paso</option>
+                                      <option>Dallas</option>
+                                      <option>Tarrant</option>
+                                                                        </select></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center" class="style4"><span class="style2">Enter Total Students </span></div></td>
+                                    <td><input name="Total_Student" type="text" value="" size="40"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center" class="style4">Enter Absence Students </div></td>
+                                    <td><input name="Absence" type="text" value="" size="40"></td>
+                                  </tr>
+  <td><p>&nbsp; </p>
+          <p>
+            <input name="submit" type="submit" class="style1" value="Predict">
+        </p></td>
+  </tr>
+                                </table>
+					 </fieldset>
+				  </form>
+
+
+ 					<form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+
+                            <hr>
+                            <div>
+                              <table border="0" align="center" >
+                                    <tr><td width="246" bgcolor="#FF0000"><div align="center"><span class="style6">Attandance Type</span> :: </div></td>
+
+
+
+                                        <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{objs}}</div></td></tr>
+                      </table>
+
+
+
+                            </div>
+
+
+
+
+						</fieldset>
+					</form>
+				</div>
+
+				<div class="col-md-2">
+					<!-------null------>
+				</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    <tr>

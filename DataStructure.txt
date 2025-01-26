@@ -1,0 +1,28 @@
+A Student Attendance Management Method Based on Crowdsensing in Classroom Environment
+
+
+Management; Mobile Crowdsensing; Monte Carlo Tree Search; Attendance Verification
+
+IEEE Access and Transaction on IOT,Volume:9,Issue Date:18.February.2021
+
+A_Student_Attendance_Management
+
+a_student_attendance_management
+
+
+student_attendance_results
+
+RNo
+ADay
+Weekday
+Student_Location
+Location_Number
+Country
+Total_Student
+Absence
+Prediction
+
+
+student_attendance_results,detection_ratio,detection_accuracy
+
+
